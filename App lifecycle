@@ -1,0 +1,17 @@
+There are different elements to be considered while getting to know about iOS app lifecycle.
+1. Key objects involved
+2. States of the app and what do they do?
+3. Transition between the states of the app.
+4. Few examples of state transitions.
+
+
+#1. Key objects involved 
+
+#2. States of the app and what do they do?
+
+#3. Transition between the states of the app.
+
+#4. Few examples of state transitions.
+
+References :
+https://medium.com/@neroxiao/ios-app-life-cycle-ec1b31cee9dc
