@@ -11,7 +11,11 @@ Basically there are 3 types in this.
 
 Consider this example where a view model has created its own dependency on the object.
 
-// screenshot or code block
+```
+class LibraryViewModel {
+     var library = Library()
+}
+```
 
 Let's see how we can inject the depencies in ways that can be explained in just a line.
 
@@ -46,44 +50,48 @@ Closure expressions are unnamed closures written in a lightweight syntax that ca
 
 Closure expression syntax has the following general form:
 
+```
 { (parameters) -> return type in
     statements
 }
+```
 
 The parameters in closure expression syntax can be in-out parameters, but they can’t have a default value. Variadic parameters can be used if you name the variadic parameter. Tuples can also be used as parameter types and return types.
 Eg:
+```
 reversedNames = names.sorted(by: { (s1: String, s2: String) -> Bool in
     return s1 > s2
 })
+```
 
 ### Type inference
 
 Swift can infer the types of the closure's parameters and the type of the value it returns if the closure is passed as an argument to a method.
 
 Simplified Eg:
-reversedNames = names.sorted(by: { s1, s2 in return s1 > s2 } )
+`reversedNames = names.sorted(by: { s1, s2 in return s1 > s2 } )`
 
 Single-expression closures can implicitly return the result of their single expression by omitting the return keyword from their declaration
 
 More Simplified Eg:
-reversedNames = names.sorted(by: { s1, s2 in s1 > s2 } )
+`reversedNames = names.sorted(by: { s1, s2 in s1 > s2 } )`
 
 Swift automatically provides shorthand argument names to inline closures, which can be used to refer to the values of the closure’s arguments by the names $0, $1, $2, and so on.
 
 Shortened Eg:
-reversedNames = names.sorted(by: { $0 > $1 } )
+```reversedNames = names.sorted(by: { $0 > $1 } )```
 Here, $0 and $1 refer to the closure’s first and second String arguments.
 
 There is even shorter way to write the closure expression above by using operators.
 
 More Shortened Eg:
-reversedNames = names.sorted(by: >)
+```reversedNames = names.sorted(by: >)```
 
 ### Trailing Closure
 
 A trailing closure is written after the function call’s parentheses, even though it is still an argument to the function. When you use the trailing closure syntax, you don’t write the argument label for the closure as part of the function call.
 
-func someFunctionThatTakesAClosure(closure: () -> Void) {
+```func someFunctionThatTakesAClosure(closure: () -> Void) {
     // function body goes here
 }
 
@@ -98,7 +106,7 @@ someFunctionThatTakesAClosure(closure: {
 someFunctionThatTakesAClosure() {
     // trailing closure's body goes here
 }
-
+```
 ### Reference types
 
 After all this, One important thing is that closures are reference types.
@@ -114,6 +122,7 @@ Common use case for this is completion handlers in functions that start an async
 An autoclosure is a closure that is automatically created to wrap an expression that’s being passed as an argument to a function. It doesn’t take any arguments, and when it’s called, it returns the value of the expression that’s wrapped inside of it.
 
 Eg:
+```
 var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
 print(customersInLine.count)
 // Prints "5"
@@ -126,3 +135,4 @@ print("Now serving \(customerProvider())!")
 // Prints "Now serving Chris!"
 print(customersInLine.count)
 // Prints "4"
+```
