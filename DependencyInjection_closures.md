@@ -91,7 +91,8 @@ More Shortened Eg:
 
 A trailing closure is written after the function call’s parentheses, even though it is still an argument to the function. When you use the trailing closure syntax, you don’t write the argument label for the closure as part of the function call.
 
-```func someFunctionThatTakesAClosure(closure: () -> Void) {
+```
+func someFunctionThatTakesAClosure(closure: () -> Void) {
     // function body goes here
 }
 
