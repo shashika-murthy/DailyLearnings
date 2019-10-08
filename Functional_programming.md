@@ -8,10 +8,11 @@ A key practice in functional programming is breaking code down into smaller, **p
 
 Lets compare this with the traditional imperative programming and understand how to accomplish this.
 
-## Eg:
+## Example:
 If I want just even numbers from an array of data
 
 ## Imperative approach:
+```
 let numbers = [1, 2, 3, 4, 5]
 var evenNumbers = [Int]()
 
@@ -21,9 +22,10 @@ for i in 0..<numbers.count {
         evenNumbers.append(number)
     }
 }
+```
 
 ## Functional Approach
-let evenNumbers = [1, 2, 3, 4, 5].filter { $0 % 2 == 0 }
+```let evenNumbers = [1, 2, 3, 4, 5].filter { $0 % 2 == 0 }```
 
 Similarly, **higher-order functions** like map(), flatmap(), sorted(), forEach() etc methods work. By higher-order, I mean functions that use a closure as a parameter.
 
@@ -32,6 +34,7 @@ First-class functions are treated as first-class variable. The first class varia
 
 ## Few terms:
 Functors -> something that can implement .map()
+
 Monads -> something that can implement .flatMap()
 
 ## Pros:
